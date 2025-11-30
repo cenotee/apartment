@@ -7,7 +7,7 @@ body{margin:0;background:var(--bg);color:#111;line-height:1.5;font-family:'Inter
 .wrap{max-width:1100px;margin:0 auto;padding:0 18px}
 .hero{background:linear-gradient(90deg, #fff 0%, #f3f6fb 100%);padding:40px 0;border-bottom:1px solid rgba(0,0,0,0.06)}
 .hero{position:relative;overflow:hidden;padding:40px 0;border-bottom:1px solid rgba(0,0,0,0.06)}
-.hero-media{position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1600&q=80');background-size:cover;background-position:center;filter:brightness(0.55) saturate(1.05);z-index:0}
+.hero-media{position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1615874959474-d609969a20ed?auto=format&fit=crop&w=1600&q=80');background-size:cover;background-position:center;filter:brightness(0.55) saturate(1.05);z-index:0}
 .hero-content{position:relative;z-index:1;padding:60px 0}
 .hero h1{margin:0;font-size:32px;color:#fff}
 .lead{margin-top:10px;color:rgba(255,255,255,0.9);max-width:700px}
