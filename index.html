@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Apartment Booking</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-media" aria-hidden="true"></div>
+    <div class="wrap hero-content">
+      <h1>Apartment Booking</h1>
+      <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    </div>
+  </header>
+
+  <section class="wrap gallery-section">
+    <h2>Photos</h2>
+    <div class="carousel" id="carousel" aria-roledescription="carousel" tabindex="0">
+      <button class="carousel-btn prev" aria-label="Previous photo">‹</button>
+      <div class="slides">
+        <div class="slide active" data-index="0">
+          <img src="images/interior-plants.svg" alt="Living area with plants"/>
+        </div>
+        <div class="slide" data-index="1">
+          <img src="images/bedroom-plants.svg" alt="Bedroom with plants and light"/>
+        </div>
+        <div class="slide" data-index="2">
+          <img src="images/terrace-park.svg" alt="Terrace overlooking a park"/>
+        </div>
+      </div>
+      <button class="carousel-btn next" aria-label="Next photo">›</button>
+      <div class="indicators" aria-hidden="false"></div>
+    </div>
+  </section>
+
+  <main class="container">
+    <section class="col">
+      <h2>Availability</h2>
+      <div class="embed">
+        <div class="iframe-wrap iframe-calendar">
+          <iframe src="https://calendar.google.com/calendar/embed?src=32d24f100946ad00dc0502ff970d940c7ef3822c334632769214785495a2611c%40group.calendar.google.com&ctz=Europe%2FPrague" frameborder="0" scrolling="no" title="Availability calendar"></iframe>
+        </div>
+      </div>
+    </section>
+
+    <section class="col">
+      <h2>Book Now</h2>
+      <div class="embed">
+        <div class="iframe-wrap iframe-form">
+          <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdJMblffBKWMx9XW837Cx_pNe4jgS-dG-F32mIJ51E8n1sjIQ/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0" title="Booking form">Loading…</iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+
+
+  <script>
+    (function(){
+      const carousel = document.getElementById('carousel');
+      if(!carousel) return;
+      const slides = carousel.querySelectorAll('.slide');
+      const indicators = carousel.querySelector('.indicators');
+      let idx = 0;
+      let timer = null;
+
+      function render(){
+        slides.forEach((s,i)=> s.classList.toggle('active', i===idx));
+        indicators.innerHTML = '';
+        slides.forEach((s,i)=>{
+          const btn = document.createElement('button');
+          btn.className = 'dot' + (i===idx? ' active':'');
+          btn.setAttribute('data-i', i);
+          btn.setAttribute('aria-label', 'Go to photo ' + (i+1));
+          indicators.appendChild(btn);
+        });
+      }
+
+      function go(n){ idx = (n + slides.length) % slides.length; render(); }
+      function nextSlide(){ go(idx+1); }
+      function prevSlide(){ go(idx-1); }
+
+      carousel.addEventListener('click', (e)=>{
+        if(e.target.matches('.next')) nextSlide();
+        if(e.target.matches('.prev')) prevSlide();
+        if(e.target.matches('.dot')) go(Number(e.target.getAttribute('data-i')));
+      });
+
+      // keyboard navigation
+      carousel.addEventListener('keydown', (e)=>{
+        if(e.key === 'ArrowRight') nextSlide();
+        if(e.key === 'ArrowLeft') prevSlide();
+      });
+
+      // autoplay
+      function start(){ timer = setInterval(nextSlide, 4000); }
+      function stop(){ clearInterval(timer); timer = null; }
+      carousel.addEventListener('mouseover', stop);
+      carousel.addEventListener('mouseout', start);
+
+      // touch swipe support (basic)
+      let touchStartX = 0;
+      carousel.addEventListener('touchstart', (e)=>{ touchStartX = e.touches[0].clientX; stop(); }, {passive:true});
+      carousel.addEventListener('touchend', (e)=>{ const dx = e.changedTouches[0].clientX - touchStartX; if(dx>40) prevSlide(); else if(dx<-40) nextSlide(); start(); });
+
+      // initial
+      render(); start();
+    })();
+  </script>
+</body>
+</html>
