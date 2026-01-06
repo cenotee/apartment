@@ -58,7 +58,7 @@ body{margin:0;background:var(--bg);color:#111;line-height:1.5;font-family:'Inter
 
 /* Gallery / Carousel styles */
 .gallery-section{padding:18px 0}
-.carousel{position:relative;display:block;align-items:center}
+.carousel{position:relative;display:flex;flex-direction:column;align-items:center}
 /* Limit carousel size to roughly half the page width and center it */
 .gallery-section .carousel{max-width:550px;margin:0 auto}
 .carousel .slides{display:grid;grid-template-columns:1fr;position:relative;overflow:hidden;border-radius:10px;aspect-ratio:3/4;min-height:280px;max-height:520px}
@@ -68,8 +68,8 @@ body{margin:0;background:var(--bg);color:#111;line-height:1.5;font-family:'Inter
 .slide img{width:100%;height:100%;display:block;border-radius:8px}
 .carousel-btn{position:absolute;top:50%;transform:translateY(-50%);background:rgba(0,0,0,0.45);color:#fff;border:0;padding:10px 14px;border-radius:6px;cursor:pointer;font-size:20px}
 .carousel-btn:focus{outline:2px solid #fff}
-.carousel-btn.prev{left:12px}
-.carousel-btn.next{right:12px}
+.carousel-btn.prev,
+.carousel-btn.next{display:none}
 .indicators{display:flex;gap:8px;justify-content:center;padding:10px 0;margin-top:8px}
 .dot{width:10px;height:10px;border-radius:50%;background:rgba(0,0,0,0.25);border:0;cursor:pointer}
 .dot.active{background:var(--accent)}
