@@ -9,37 +9,64 @@
 </head>
 <body>
   <header class="hero">
+    <div class="lang-toggle" aria-label="Language toggle">
+      <button class="lang-btn active" data-lang="en" type="button">EN</button>
+      <button class="lang-btn" data-lang="sk" type="button">SK</button>
+    </div>
     <div class="hero-media" aria-hidden="true"></div>
     <div class="wrap hero-content">
       <h1>Little Big Prague Apt</h1>
-      <p class="lead">Hi friends and family! This little page is just for you. Check when the apartment is free, send us a quick request, and we’ll confirm your stay as soon as we can.</p>
+      <p class="lead" data-i18n-html="lead">Hi (friends of) friends and family! Our small apartment is rarely used, so we'd like to offer it to you when you're in Prague.<br>Check the availability in the calendar below, send us a quick request, and we’ll confirm your stay as soon as we can.<br>This little booking page is just for you, please do not share.</p>
     </div>
   </header>
 
+  <section class="wrap info-section">
+    <div class="info-card">
+      <h2 data-i18n="highlightsTitle">✨ Highlights</h2>
+      <ul class="bullet-list" data-i18n-html="highlightsList">
+        <li>Large private terrace – great for coffee, fresh air, or relaxing after a day out</li>
+        <li>Comfortable sleeping setup:</li>
+        <li>Queen-size bed</li>
+        <li>Pull-out sofa (suitable for kids or extra guests)</li>
+        <li>Fully equipped kitchen with:</li>
+        <li>Oven &amp; microwave</li>
+        <li>Nespresso coffee machine</li>
+        <li>All essential cookware and utensils</li>
+        <li>Washing machine and fresh towels provided</li>
+        <li>Kid-friendly apartment</li>
+        <li>Pet-friendly (please mention pets in advance)</li>
+        <li>Quiet, green area with parks and nature nearby</li>
+        <li>Good public transport connection – approx. 20 minutes to the city centre by tram</li>
+      </ul>
+    </div>
+    <div class="info-card">
+      <h2 data-i18n="goodToKnowTitle">ℹ️ Good to know</h2>
+      <ul class="bullet-list" data-i18n-html="goodToKnowList">
+        <li>No parties – please respect neighbours and the building</li>
+        <li>Parking options:</li>
+        <li>Street parking nearby</li>
+        <li>Underground garage available upon request</li>
+        <li>Longer-term stays are possible – just let us know your plans</li>
+        <li>Crypto payments accepted</li>
+        <li>Apartment is best suited for friends and family stays rather than events or gatherings</li>
+      </ul>
+    </div>
+  </section>
+
   <section class="wrap gallery-section">
-    <h2>Photos</h2>
+    <h2 data-i18n="photos">Photos</h2>
     <div class="carousel" id="carousel" aria-roledescription="carousel" tabindex="0">
-      <button class="carousel-btn prev" aria-label="Previous photo">‹</button>
-      <div class="slides">
-        <div class="slide active" data-index="0">
-          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80" alt="Cozy living room interior"/>
-        </div>
-        <div class="slide" data-index="1">
-          <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1200&q=80" alt="Modern bedroom with warm light"/>
-        </div>
-        <div class="slide" data-index="2">
-          <img src="https://images.unsplash.com/photo-1501183638710-841dd1904471?auto=format&fit=crop&w=1200&q=80" alt="Balcony overlooking greenery"/>
-        </div>
-      </div>
-      <button class="carousel-btn next" aria-label="Next photo">›</button>
+      <button class="carousel-btn prev" data-i18n-aria="prev" aria-label="Previous photo">‹</button>
+      <div class="slides"></div>
+      <button class="carousel-btn next" data-i18n-aria="next" aria-label="Next photo">›</button>
       <div class="indicators" aria-hidden="false"></div>
     </div>
   </section>
 
   <main class="container">
     <section class="col">
-      <h2>Available Dates</h2>
-      <p class="section-note">Events in the calendar are already booked. If your dates look clear, go ahead and request them using the form on the right.</p>
+      <h2 data-i18n="available">Available Dates</h2>
+      <p class="section-note" data-i18n="calendarNote">Events in the calendar are already booked. If your dates look clear, go ahead and request them using the form on the right.</p>
       <div class="embed">
         <div class="iframe-wrap iframe-calendar">
           <iframe src="https://calendar.google.com/calendar/embed?src=32d24f100946ad00dc0502ff970d940c7ef3822c334632769214785495a2611c%40group.calendar.google.com&ctz=Europe%2FPrague" frameborder="0" scrolling="no" title="Availability calendar"></iframe>
@@ -48,8 +75,8 @@
     </section>
 
     <section class="col">
-      <h2>Booking Request</h2>
-      <p class="section-note">This isn’t a formal booking system—just a friendly way to coordinate stays. Share your preferred dates and a few details, and we’ll get back to you.</p>
+      <h2 data-i18n="booking">Booking Request</h2>
+      <p class="section-note" data-i18n="bookingNote">This isn’t a formal booking system—just a friendly way to coordinate stays. Share your preferred dates and a few details, and we’ll get back to you.</p>
       <div class="embed">
         <div class="iframe-wrap iframe-form">
           <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdJMblffBKWMx9XW837Cx_pNe4jgS-dG-F32mIJ51E8n1sjIQ/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0" title="Booking form">Loading…</iframe>
@@ -58,25 +85,158 @@
     </section>
   </main>
 
+  <section class="wrap map-section">
+    <h2 data-i18n="location">Location</h2>
+    <div class="embed">
+      <div class="iframe-wrap iframe-map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2559.5822067380714!2d14.499730162116068!3d50.094108621407585!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470b9330deb05817%3A0x2af46e933f113c63!2sNad%20Smetankou%20226%2F4%2C%20190%2000%20Praha%209-Hrdlo%C5%99ezy!5e0!3m2!1sen!2scz!4v1767687493659!5m2!1sen!2scz" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Google Maps location"></iframe>
+      </div>
+    </div>
+  </section>
 
 
   <script>
+    const translations = {
+      en: {
+        title: 'Little Big Prague Apt – Booking',
+        lead: "Hi (friends of) friends and family! Our small apartment is rarely used, so we'd like to offer it to you when you're in Prague.<br>Check the availability in the calendar below, send us a quick request, and we’ll confirm your stay as soon as we can.<br>This little booking page is just for you, please do not share.",
+        photos: 'Photos',
+        highlightsTitle: '✨ Highlights',
+        highlightsList: '<li>Large private terrace – great for coffee, fresh air, or relaxing after a day out</li><li>Comfortable sleeping setup:</li><li>Queen-size bed</li><li>Pull-out sofa (suitable for kids or extra guests)</li><li>Fully equipped kitchen with:</li><li>Oven &amp; microwave</li><li>Nespresso coffee machine</li><li>All essential cookware and utensils</li><li>Washing machine and fresh towels provided</li><li>Kid-friendly apartment</li><li>Pet-friendly (please mention pets in advance)</li><li>Quiet, green area with parks and nature nearby</li><li>Good public transport connection – approx. 20 minutes to the city centre by tram</li>',
+        goodToKnowTitle: 'ℹ️ Good to know',
+        goodToKnowList: '<li>No parties – please respect neighbours and the building</li><li>Parking options:</li><li>Street parking nearby</li><li>Underground garage available upon request</li><li>Longer-term stays are possible – just let us know your plans</li><li>Crypto payments accepted</li><li>Apartment is best suited for friends and family stays rather than events or gatherings</li>',
+        available: 'Available Dates',
+        booking: 'Booking Request',
+        calendarNote: 'Events in the calendar are already booked. If your dates look clear, go ahead and request them using the form on the right.',
+        bookingNote: 'This isn’t a formal booking system—just a friendly way to coordinate stays. Share your preferred dates and a few details, and we’ll get back to you.',
+        photoAlt: 'Apartment photo',
+        prev: 'Previous photo',
+        next: 'Next photo',
+        indicatorLabel: 'Go to photo',
+        location: 'Location'
+      },
+      sk: {
+        title: 'Little Big Prague Apt – Rezervácia',
+        lead: 'Ahojte kamaráti (kamarátov) a rodina! Náš malý byt je využitý len málo, radi ho ponúkneme, keď ste v Prahe.<br>Pozrite dostupnosť v kalendári, pošlite krátku žiadosť a pobyt čo najskôr potvrdíme.<br>Táto rezervačná stránka je len pre vás, prosím nezdieľajte ju.',
+        photos: 'Fotky',
+        highlightsTitle: '✨ Hlavné plusy',
+        highlightsList: '<li>Veľká súkromná terasa – ideálna na kávu, čerstvý vzduch alebo oddych po dni v meste</li><li>Pohodlné spanie:</li><li>Manželská posteľ (queen-size)</li><li>Rozkladacia pohovka (vhodná pre deti alebo hostí navyše)</li><li>Plne vybavená kuchyňa s:</li><li>Rúrou a mikrovlnkou</li><li>Kávovarom Nespresso</li><li>Všetkým potrebným riadom a vybavením</li><li>Práčka a čisté uteráky k dispozícii</li><li>Byt vhodný pre deti</li><li>Pet-friendly (prosíme spomeňte domáce zvieratá vopred)</li><li>Tichá, zelená lokalita s parkmi a prírodou v blízkosti</li><li>Dobré spojenie MHD – cca 20 minút električkou do centra</li>',
+        goodToKnowTitle: 'ℹ️ Dôležité info',
+        goodToKnowList: '<li>Žiadne párty – prosíme rešpektujte susedov a dom</li><li>Parkovanie:</li><li>Ulica v okolí</li><li>Podzemná garáž na požiadanie</li><li>Možné sú aj dlhšie pobyty – stačí dať vedieť</li><li>Akceptujeme platby kryptom</li><li>Byt je najlepšie pre kamarátov a rodinu, nie na akcie či večierky</li>',
+        available: 'Voľné termíny',
+        booking: 'Žiadosť o pobyt',
+        calendarNote: 'Udalosti v kalendári sú už rezervované. Ak sú vaše dni voľné, pošlite nám žiadosť cez formulár.',
+        bookingNote: 'Toto nie je formálny rezervačný systém—len jednoduchý spôsob, ako zladiť termíny. Podeľte sa o preferované dátumy a pár detailov, ozveme sa späť.',
+        photoAlt: 'Fotka apartmánu',
+        prev: 'Predchádzajúca fotka',
+        next: 'Ďalšia fotka',
+        indicatorLabel: 'Prejsť na fotku',
+        location: 'Poloha'
+      }
+    };
+
+    let currentLang = 'en';
+
+    function applyTranslations(lang){
+      const dict = translations[lang];
+      if(!dict) return;
+      currentLang = lang;
+      document.documentElement.lang = lang;
+      document.title = dict.title;
+      document.querySelectorAll('[data-i18n]').forEach(el=>{
+        const key = el.getAttribute('data-i18n');
+        if(dict[key]) el.textContent = dict[key];
+      });
+      document.querySelectorAll('[data-i18n-html]').forEach(el=>{
+        const key = el.getAttribute('data-i18n-html');
+        if(dict[key]) el.innerHTML = dict[key];
+      });
+      document.querySelectorAll('[data-i18n-aria]').forEach(el=>{
+        const key = el.getAttribute('data-i18n-aria');
+        if(dict[key]) el.setAttribute('aria-label', dict[key]);
+      });
+      document.querySelectorAll('.slides img').forEach(img=>{
+        img.setAttribute('alt', dict.photoAlt || 'Apartment photo');
+      });
+      document.querySelectorAll('.lang-btn').forEach(btn=>{
+        const active = btn.dataset.lang === lang;
+        btn.classList.toggle('active', active);
+        btn.setAttribute('aria-pressed', active ? 'true' : 'false');
+      });
+      if(typeof window.renderCarousel === 'function'){
+        window.renderCarousel();
+      }
+    }
+
+    document.querySelectorAll('.lang-btn').forEach(btn=>{
+      btn.addEventListener('click', ()=>{
+        const lang = btn.getAttribute('data-lang');
+        if(lang !== currentLang) applyTranslations(lang);
+      });
+    });
+
     (function(){
       const carousel = document.getElementById('carousel');
       if(!carousel) return;
-      const slides = carousel.querySelectorAll('.slide');
+      const imageFiles = [
+        'IMG_1805.jpeg',
+        'IMG_1810.jpeg',
+        'IMG_1818.jpeg',
+        'IMG_1826.jpeg',
+        'IMG_1831.jpeg',
+        'IMG_1836.jpeg',
+        'IMG_1837.jpeg',
+        'IMG_2710 (1).jpeg',
+        'IMG_2716.jpeg',
+        'IMG_2717.jpeg',
+        'IMG_2727 (1).jpeg',
+        'IMG_2728 (1).jpeg',
+        'IMG_2733 (1).jpeg',
+        'IMG_2735.jpeg',
+        'IMG_2739 (1).jpeg',
+        'IMG_2743 (1).jpeg',
+        'IMG_2744.jpeg',
+        'IMG_2746.jpeg',
+        'IMG_2753 (1).jpeg',
+        'IMG_2755.jpeg',
+        'IMG_2758.jpeg',
+        'IMG_2759.jpeg',
+        'IMG_2770.jpeg',
+        'IMG_2772 (1).jpeg'
+      ];
+      let slides = [];
       const indicators = carousel.querySelector('.indicators');
       let idx = 0;
       let timer = null;
 
+      function buildSlides(){
+        const slidesWrap = carousel.querySelector('.slides');
+        slidesWrap.innerHTML = '';
+        const altText = translations[currentLang]?.photoAlt || 'Apartment photo';
+        imageFiles.forEach((file,i)=>{
+          const slide = document.createElement('div');
+          slide.className = 'slide' + (i===0 ? ' active' : '');
+          slide.setAttribute('data-index', i);
+          const img = document.createElement('img');
+          img.src = `images/${file}`;
+          img.loading = i === 0 ? 'eager' : 'lazy';
+          img.alt = altText;
+          slide.appendChild(img);
+          slidesWrap.appendChild(slide);
+        });
+        slides = slidesWrap.querySelectorAll('.slide');
+      }
+
       function render(){
+        if(!slides.length) return;
         slides.forEach((s,i)=> s.classList.toggle('active', i===idx));
         indicators.innerHTML = '';
         slides.forEach((s,i)=>{
           const btn = document.createElement('button');
           btn.className = 'dot' + (i===idx? ' active':'');
           btn.setAttribute('data-i', i);
-          btn.setAttribute('aria-label', 'Go to photo ' + (i+1));
+          const label = translations[currentLang]?.indicatorLabel || 'Go to photo';
+          btn.setAttribute('aria-label', label + ' ' + (i+1));
           indicators.appendChild(btn);
         });
       }
@@ -109,8 +269,12 @@
       carousel.addEventListener('touchend', (e)=>{ const dx = e.changedTouches[0].clientX - touchStartX; if(dx>40) prevSlide(); else if(dx<-40) nextSlide(); start(); });
 
       // initial
+      buildSlides();
       render(); start();
+      window.renderCarousel = render;
     })();
+
+    applyTranslations('en');
   </script>
 </body>
 </html>
